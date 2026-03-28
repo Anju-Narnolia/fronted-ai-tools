@@ -1,12 +1,12 @@
 pipeline {
     agent any
     environment {
-        APP_NAME = "express-frontend"
+        APP_NAME = "app-frontend"
     }
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Anju-Narnolia/express-frontend.git', credentialsId: 'github-creds'
+                git branch: 'main', url: 'https://github.com/Anju-Narnolia/fronted-ai-tools', credentialsId: 'github-creds'
             }
         }
         stage('Build Docker Image') {
@@ -28,7 +28,7 @@ pipeline {
     }
     post {
         success {
-            echo "✅ Express frontend deployed successfully!"
+            echo "✅ App frontend deployed successfully!"
         }
         failure {
             echo "❌ Build failed. Check logs."
