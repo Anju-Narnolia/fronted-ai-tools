@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Anju-Narnolia/fronted-ai-tools', credentialsId: 'github-creds'
+                git branch: 'main', url: 'https://github.com/Anju-Narnolia/frontend-ai-tools', credentialsId: 'github-creds'
             }
         }
         stage('Build Docker Image') {
